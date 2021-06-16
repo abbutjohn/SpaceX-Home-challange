@@ -33,7 +33,7 @@ class SXHomeViewModelTests: XCTestCase {
         waitForExpectations(timeout: 0.01, handler: nil)
     }
     
-    func testBookCellViewModel() {
+    func testCellViewModel() {
         
         let rocketInfo = Rocket(id: "abc", name: "abc", success_rate_pct: 0, first_flight: "2006-03-24", active: false, flickr_images: ["abc"], country: "abc", description: "abc", cost_per_launch: 0, wikipedia: "abc")
         let rocketCellViewModel = RocketCellViewModel(rocket: rocketInfo)
