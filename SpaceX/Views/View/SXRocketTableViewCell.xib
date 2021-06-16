@@ -24,6 +24,12 @@
                             <constraint firstAttribute="width" secondItem="hF7-xB-Q92" secondAttribute="height" multiplier="59:58" id="ogV-G0-778"/>
                         </constraints>
                         <imageReference key="image" image="photo" catalog="system" symbolScale="medium" renderingMode="original"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="4"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                        </userDefinedRuntimeAttributes>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cMA-md-NWk">
                         <rect key="frame" x="140" y="11" width="220" height="23"/>

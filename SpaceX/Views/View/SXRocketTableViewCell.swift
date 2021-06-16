@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import AlamofireImage
 
 
 class SXRocketTableViewCell: UITableViewCell {
@@ -16,21 +15,16 @@ class SXRocketTableViewCell: UITableViewCell {
     @IBOutlet weak var dateLbl: UILabel!
     @IBOutlet weak var successRateLbl: UILabel!
     
+    //MARK: Assigning Data from Viewmodel
+
     var viewModel: RocketCellViewModel!{
         didSet {
+            
+            //MARK: GCD background operation
+            
             if let imageUrl = URL(string: viewModel.imageURL){
-                let filter = AspectScaledToFillSizeWithRoundedCornersFilter(
-                    size: self.imageV.frame.size,
-                    radius: 10.0
-                )
-                //GCD
-                DispatchQueue.global().async {
-                    self.imageV.af.setImage(
-                        withURL: imageUrl,
-                        placeholderImage: Image(systemName: "photo"),
-                        filter: filter,
-                        imageTransition: .crossDissolve(0.2)
-                    )
+                DispatchQueue.global(qos: .background).async {
+                    self.imageV.donloadImage(fromUrl: imageUrl, id: self.viewModel.id)
                 }
             }
             nameLbl.text = viewModel.name

@@ -14,56 +14,49 @@ struct SXDetailsView: View {
     @Environment(\.openURL) var openURL
     
     var body: some View {
-   
+        
         ZStack{
             LinearGradient(gradient: Gradient(colors: [Color(rocket.success_color),.black]), startPoint: .topLeading, endPoint: .bottomLeading)
                 .edgesIgnoringSafeArea(.all)
+
             VStack{
-                Spacer()
-                VStack{
-                    Text(rocket.name)
-                        .foregroundColor(.white)
-                        .font(.custom("Helvetica Neue", size: 35))
-                        .frame(height: 70)
-                }
-                Spacer()
-                VStack{
-                    LaunchInfo(country: rocket.country, firstLaunch: rocket.first_flight, cost_per_launch: rocket.cost_per_launch.description, status: rocket.active)
-                }
-                Spacer()
-                VStack{
-                    RemoteImage(url: rocket.imageURL)
-                        .aspectRatio(contentMode: .fill)
-                        .frame(height: 300)
-                        .cornerRadius(5)
-                    Spacer()
-                }
-                Spacer()
-                VStack{
-                    Spacer()
-                    HStack{
-                        Spacer()
-                        Text(rocket.description)
+                    VStack{
+                        Text(rocket.name)
                             .foregroundColor(.white)
-                            .font(.custom("Helvetica Neue", size: 15))
-                        Spacer()
+                            .fontWeight(.heavy)
+                            .font(.title)
+                            .frame(height: 100)
                     }
-                    .padding()
+                    HStack{
+                        LaunchInfo(country: rocket.country, firstLaunch: rocket.first_flight, cost_per_launch: rocket.cost_per_launch.description, status: rocket.active)
+                    }.padding(EdgeInsets(top: 0, leading: 10, bottom: 20, trailing: 10))
+                    VStack{
+                        RemoteImage(url: rocket.imageURL)
+                            .aspectRatio(contentMode: .fill)
+                            .frame(height: 300)
+                            .cornerRadius(5)
+                    }
+                    VStack{
+                        HStack{
+                            Text(rocket.description)
+                                .foregroundColor(.white)
+                                .font(.custom("Helvetica Neue", size: 17))
+                            Spacer()
+                        }.padding(EdgeInsets(top: 0, leading: 10, bottom: 10, trailing: 10))
+                       
+                    }
                     Spacer()
-                    
-                }
-                VStack {
-                    Spacer()
-                    HStack(spacing: 0) {
-                        Button("https://www.wikipedia.org") {
-                            if let wikiURL = URL(string: rocket.wikipedia){
-                                openURL(wikiURL)
+                    VStack {
+                        HStack(spacing: 0) {
+                            Button("https://www.wikipedia.org") {
+                                if let wikiURL = URL(string: rocket.wikipedia){
+                                    openURL(wikiURL)
+                                }
                             }
                         }
+                        
                     }
-                    Spacer()
-                }
-            }
+                }.frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .center)
         }
     }
    
@@ -77,6 +70,9 @@ struct SXDetailsView_Previews: PreviewProvider {
     }
 }
 
+//MARK: Custum Views
+
+
 struct LaunchInfo: View {
     
     var country : String
@@ -86,25 +82,20 @@ struct LaunchInfo: View {
     
     var body: some View {
         
-        VStack {
-            Spacer()
-            HStack{
-                Spacer()
-                Text("Launched on ") +
-                    Text(firstLaunch) +
-                    Text(" from ") +
-                    Text(country) +
-                    Text(" with an estimated cost of ") +
-                    Text(cost_per_launch) +
-                    Text("$.") +
-                    Text(" Currently, the status of the mission is ") +
-                    Text(status ? "Active." : "NotActive.")
-                Spacer()
-            }
-            Spacer()
-        }
+        VStack(alignment: .leading) {
+            Text("Launched on ") +
+                Text(firstLaunch) +
+                Text(" from ") +
+                Text(country) +
+                Text(" with an estimated cost of ") +
+                Text(cost_per_launch) +
+                Text("$.") +
+                Text(" Currently, the status of the mission is ") +
+                Text(status ? "active." : "not-active.")
+         }
         .foregroundColor(.white)
-        .font(.custom("Helvetica Neue", size: 15))
-        .padding(10)
+        .font(.custom("Helvetica Neue", size: 17))
     }
 }
+
+
