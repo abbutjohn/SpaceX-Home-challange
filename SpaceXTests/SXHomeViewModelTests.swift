@@ -2,13 +2,13 @@
 //  SpaceXTests.swift
 //  SpaceXTests
 //
-//  Created by Praveen George on 11/06/2021.
+//  Created by Abbut john on 11/06/2021.
 //
 
 import XCTest
 @testable import SpaceX
 
-class SpaceXTests: XCTestCase {
+class SXHomeViewModelTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
