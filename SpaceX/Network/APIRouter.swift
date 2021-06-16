@@ -2,61 +2,52 @@
 //  Router.swift
 //  iOSTakeHomeChallenge
 //
-//  Created by Abbut john on 03/06/2021.
+//  Created by Abbut john on 14/06/2021.
 //
 
+import Foundation
 import Alamofire
 
-enum APIRouter: URLRequestConvertible {
+enum APIRouter :URLRequestConvertible{
     
-    case login(email:String, password:String)
-    case articles
-    case article(id: Int)
+    case getAllRockets
+    case getRocketInfo(id: String)
     
-    // MARK: - HTTPMethod
+    
+    private var path: String {
+        switch self {
+        case .getAllRockets:
+            return "/rockets"
+        case .getRocketInfo:
+            return "/rockets"
+        }
+    }
     private var method: HTTPMethod {
         switch self {
-        case .login:
-            return .post
-        case .articles, .article:
+        case .getAllRockets, .getRocketInfo:
             return .get
         }
     }
     
-    // MARK: - Path
-    private var path: String {
-        switch self {
-        case .login:
-            return "/login"
-        case .articles:
-            return "/articles/all.json"
-        case .article(let id):
-            return "/article/\(id)"
-        }
-    }
-    
-    // MARK: - Parameters
     private var parameters: Parameters? {
         switch self {
-        case .login(let email, let password):
-            return [K.APIParameterKey.email: email, K.APIParameterKey.password: password]
-        case .articles, .article:
+        case .getAllRockets:
             return nil
+        case .getRocketInfo(let id):
+            return [K.APIParameterKey.id: id]
         }
     }
     
     // MARK: - URLRequestConvertible
     func asURLRequest() throws -> URLRequest {
+        
+        
         let url = try K.ProductionServer.baseURL.asURL()
         
         var urlRequest = URLRequest(url: url.appendingPathComponent(path))
         
-        // HTTP Method
         urlRequest.httpMethod = method.rawValue
-        
-        // Common Headers
         urlRequest.setValue(ContentType.json.rawValue, forHTTPHeaderField: HTTPHeaderField.acceptType.rawValue)
-        urlRequest.setValue(ContentType.json.rawValue, forHTTPHeaderField: HTTPHeaderField.contentType.rawValue)
         
         // Parameters
         if let parameters = parameters {

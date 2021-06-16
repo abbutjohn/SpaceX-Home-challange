@@ -3,19 +3,31 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		5E0E6C222672DC3600B91123 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0E6C212672DC3600B91123 /* AppDelegate.swift */; };
 		5E0E6C242672DC3600B91123 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0E6C232672DC3600B91123 /* SceneDelegate.swift */; };
-		5E0E6C262672DC3600B91123 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0E6C252672DC3600B91123 /* ViewController.swift */; };
+		5E0E6C262672DC3600B91123 /* SXHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0E6C252672DC3600B91123 /* SXHomeViewController.swift */; };
 		5E0E6C292672DC3600B91123 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E0E6C272672DC3600B91123 /* Main.storyboard */; };
 		5E0E6C2C2672DC3600B91123 /* SpaceX.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5E0E6C2A2672DC3600B91123 /* SpaceX.xcdatamodeld */; };
 		5E0E6C2E2672DC3800B91123 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E0E6C2D2672DC3800B91123 /* Assets.xcassets */; };
 		5E0E6C312672DC3800B91123 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E0E6C2F2672DC3800B91123 /* LaunchScreen.storyboard */; };
-		5E0E6C3C2672DC3800B91123 /* SpaceXTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0E6C3B2672DC3800B91123 /* SpaceXTests.swift */; };
+		5E0E6C3C2672DC3800B91123 /* SXHomeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0E6C3B2672DC3800B91123 /* SXHomeViewModelTests.swift */; };
 		5E0E6C472672DC3800B91123 /* SpaceXUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0E6C462672DC3800B91123 /* SpaceXUITests.swift */; };
+		5E0E6C822672E97300B91123 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 5E0E6C812672E97300B91123 /* Alamofire */; };
+		5E0E6CB426777C4B00B91123 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0E6CB326777C4B00B91123 /* APIClient.swift */; };
+		5E0E6CB926777C6300B91123 /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0E6CB826777C6300B91123 /* APIRouter.swift */; };
+		5E0E6CC326777F7400B91123 /* Rocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0E6CC226777F7400B91123 /* Rocket.swift */; };
+		5E0E6CC82677897000B91123 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0E6CC72677897000B91123 /* Constants.swift */; };
+		5E0E6D0026789D3B00B91123 /* SXRocketTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0E6CFE26789D3B00B91123 /* SXRocketTableViewCell.swift */; };
+		5E0E6D0126789D3B00B91123 /* SXRocketTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E0E6CFF26789D3B00B91123 /* SXRocketTableViewCell.xib */; };
+		5E0E6D072678B06500B91123 /* AlamofireImage in Frameworks */ = {isa = PBXBuildFile; productRef = 5E0E6D062678B06500B91123 /* AlamofireImage */; };
+		5E0E6D172678C70300B91123 /* SXDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0E6D162678C70300B91123 /* SXDetailsView.swift */; };
+		5E0E6D33267937E400B91123 /* SXRemoteImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0E6D32267937E400B91123 /* SXRemoteImage.swift */; };
+		5E0E6D3B2679799900B91123 /* Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0E6D3A2679799900B91123 /* Extentions.swift */; };
+		5E0E6D492679809800B91123 /* SXHomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0E6CF9267894F800B91123 /* SXHomeViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,18 +51,28 @@
 		5E0E6C1E2672DC3600B91123 /* SpaceX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E0E6C212672DC3600B91123 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5E0E6C232672DC3600B91123 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		5E0E6C252672DC3600B91123 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5E0E6C252672DC3600B91123 /* SXHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SXHomeViewController.swift; sourceTree = "<group>"; };
 		5E0E6C282672DC3600B91123 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5E0E6C2B2672DC3600B91123 /* SpaceX.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SpaceX.xcdatamodel; sourceTree = "<group>"; };
 		5E0E6C2D2672DC3800B91123 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5E0E6C302672DC3800B91123 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5E0E6C322672DC3800B91123 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5E0E6C372672DC3800B91123 /* SpaceXTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpaceXTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		5E0E6C3B2672DC3800B91123 /* SpaceXTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceXTests.swift; sourceTree = "<group>"; };
+		5E0E6C3B2672DC3800B91123 /* SXHomeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SXHomeViewModelTests.swift; sourceTree = "<group>"; };
 		5E0E6C3D2672DC3800B91123 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5E0E6C422672DC3800B91123 /* SpaceXUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpaceXUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E0E6C462672DC3800B91123 /* SpaceXUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceXUITests.swift; sourceTree = "<group>"; };
 		5E0E6C482672DC3800B91123 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5E0E6CB326777C4B00B91123 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		5E0E6CB826777C6300B91123 /* APIRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
+		5E0E6CC226777F7400B91123 /* Rocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rocket.swift; sourceTree = "<group>"; };
+		5E0E6CC72677897000B91123 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		5E0E6CF9267894F800B91123 /* SXHomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SXHomeViewModel.swift; sourceTree = "<group>"; };
+		5E0E6CFE26789D3B00B91123 /* SXRocketTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SXRocketTableViewCell.swift; sourceTree = "<group>"; };
+		5E0E6CFF26789D3B00B91123 /* SXRocketTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SXRocketTableViewCell.xib; sourceTree = "<group>"; };
+		5E0E6D162678C70300B91123 /* SXDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SXDetailsView.swift; sourceTree = "<group>"; };
+		5E0E6D32267937E400B91123 /* SXRemoteImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SXRemoteImage.swift; sourceTree = "<group>"; };
+		5E0E6D3A2679799900B91123 /* Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extentions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +80,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E0E6C822672E97300B91123 /* Alamofire in Frameworks */,
+				5E0E6D072678B06500B91123 /* AlamofireImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,14 +125,12 @@
 		5E0E6C202672DC3600B91123 /* SpaceX */ = {
 			isa = PBXGroup;
 			children = (
-				5E0E6C212672DC3600B91123 /* AppDelegate.swift */,
-				5E0E6C232672DC3600B91123 /* SceneDelegate.swift */,
-				5E0E6C252672DC3600B91123 /* ViewController.swift */,
-				5E0E6C272672DC3600B91123 /* Main.storyboard */,
-				5E0E6C2D2672DC3800B91123 /* Assets.xcassets */,
-				5E0E6C2F2672DC3800B91123 /* LaunchScreen.storyboard */,
+				5E0E6D3F26797BFA00B91123 /* ViewModel */,
+				5E0E6CBD26777C6C00B91123 /* Network */,
+				5E0E6C582672DC4C00B91123 /* Views */,
+				5E0E6C572672DC4600B91123 /* Model */,
 				5E0E6C322672DC3800B91123 /* Info.plist */,
-				5E0E6C2A2672DC3600B91123 /* SpaceX.xcdatamodeld */,
+				5E0E6C5A2672DC6C00B91123 /* Others */,
 			);
 			path = SpaceX;
 			sourceTree = "<group>";
@@ -116,7 +138,7 @@
 		5E0E6C3A2672DC3800B91123 /* SpaceXTests */ = {
 			isa = PBXGroup;
 			children = (
-				5E0E6C3B2672DC3800B91123 /* SpaceXTests.swift */,
+				5E0E6C3B2672DC3800B91123 /* SXHomeViewModelTests.swift */,
 				5E0E6C3D2672DC3800B91123 /* Info.plist */,
 			);
 			path = SpaceXTests;
@@ -129,6 +151,74 @@
 				5E0E6C482672DC3800B91123 /* Info.plist */,
 			);
 			path = SpaceXUITests;
+			sourceTree = "<group>";
+		};
+		5E0E6C572672DC4600B91123 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5E0E6CC226777F7400B91123 /* Rocket.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5E0E6C582672DC4C00B91123 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5E0E6D50267980BF00B91123 /* View */,
+				5E0E6C592672DC6100B91123 /* Controllers */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5E0E6C592672DC6100B91123 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5E0E6C252672DC3600B91123 /* SXHomeViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		5E0E6C5A2672DC6C00B91123 /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				5E0E6C212672DC3600B91123 /* AppDelegate.swift */,
+				5E0E6C232672DC3600B91123 /* SceneDelegate.swift */,
+				5E0E6C272672DC3600B91123 /* Main.storyboard */,
+				5E0E6C2D2672DC3800B91123 /* Assets.xcassets */,
+				5E0E6C2F2672DC3800B91123 /* LaunchScreen.storyboard */,
+				5E0E6C2A2672DC3600B91123 /* SpaceX.xcdatamodeld */,
+				5E0E6D3A2679799900B91123 /* Extentions.swift */,
+			);
+			path = Others;
+			sourceTree = "<group>";
+		};
+		5E0E6CBD26777C6C00B91123 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				5E0E6CC72677897000B91123 /* Constants.swift */,
+				5E0E6CB326777C4B00B91123 /* APIClient.swift */,
+				5E0E6CB826777C6300B91123 /* APIRouter.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		5E0E6D3F26797BFA00B91123 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				5E0E6CF9267894F800B91123 /* SXHomeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		5E0E6D50267980BF00B91123 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5E0E6D162678C70300B91123 /* SXDetailsView.swift */,
+				5E0E6D32267937E400B91123 /* SXRemoteImage.swift */,
+				5E0E6CFE26789D3B00B91123 /* SXRocketTableViewCell.swift */,
+				5E0E6CFF26789D3B00B91123 /* SXRocketTableViewCell.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -147,6 +237,10 @@
 			dependencies = (
 			);
 			name = SpaceX;
+			packageProductDependencies = (
+				5E0E6C812672E97300B91123 /* Alamofire */,
+				5E0E6D062678B06500B91123 /* AlamofireImage */,
+			);
 			productName = SpaceX;
 			productReference = 5E0E6C1E2672DC3600B91123 /* SpaceX.app */;
 			productType = "com.apple.product-type.application";
@@ -218,6 +312,10 @@
 				Base,
 			);
 			mainGroup = 5E0E6C152672DC3600B91123;
+			packageReferences = (
+				5E0E6C802672E97300B91123 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				5E0E6D052678B06500B91123 /* XCRemoteSwiftPackageReference "AlamofireImage" */,
+			);
 			productRefGroup = 5E0E6C1F2672DC3600B91123 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -234,6 +332,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E0E6D0126789D3B00B91123 /* SXRocketTableViewCell.xib in Resources */,
 				5E0E6C312672DC3800B91123 /* LaunchScreen.storyboard in Resources */,
 				5E0E6C2E2672DC3800B91123 /* Assets.xcassets in Resources */,
 				5E0E6C292672DC3600B91123 /* Main.storyboard in Resources */,
@@ -261,10 +360,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5E0E6C262672DC3600B91123 /* ViewController.swift in Sources */,
+				5E0E6CC326777F7400B91123 /* Rocket.swift in Sources */,
+				5E0E6C262672DC3600B91123 /* SXHomeViewController.swift in Sources */,
+				5E0E6CB926777C6300B91123 /* APIRouter.swift in Sources */,
+				5E0E6D172678C70300B91123 /* SXDetailsView.swift in Sources */,
+				5E0E6D33267937E400B91123 /* SXRemoteImage.swift in Sources */,
 				5E0E6C222672DC3600B91123 /* AppDelegate.swift in Sources */,
 				5E0E6C242672DC3600B91123 /* SceneDelegate.swift in Sources */,
+				5E0E6D3B2679799900B91123 /* Extentions.swift in Sources */,
+				5E0E6CB426777C4B00B91123 /* APIClient.swift in Sources */,
+				5E0E6D492679809800B91123 /* SXHomeViewModel.swift in Sources */,
 				5E0E6C2C2672DC3600B91123 /* SpaceX.xcdatamodeld in Sources */,
+				5E0E6D0026789D3B00B91123 /* SXRocketTableViewCell.swift in Sources */,
+				5E0E6CC82677897000B91123 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,7 +380,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5E0E6C3C2672DC3800B91123 /* SpaceXTests.swift in Sources */,
+				5E0E6C3C2672DC3800B91123 /* SXHomeViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -597,6 +705,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5E0E6C802672E97300B91123 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.4.3;
+			};
+		};
+		5E0E6D052678B06500B91123 /* XCRemoteSwiftPackageReference "AlamofireImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/AlamofireImage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5E0E6C812672E97300B91123 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5E0E6C802672E97300B91123 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		5E0E6D062678B06500B91123 /* AlamofireImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5E0E6D052678B06500B91123 /* XCRemoteSwiftPackageReference "AlamofireImage" */;
+			productName = AlamofireImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		5E0E6C2A2672DC3600B91123 /* SpaceX.xcdatamodeld */ = {

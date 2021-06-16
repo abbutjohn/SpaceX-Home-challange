@@ -2,28 +2,31 @@
 //  Router.swift
 //  iOSTakeHomeChallenge
 //
-//  Created by Abbut john on 03/06/2021.
+//  Created by Abbut john on 14/06/2021.
 //
 
+import UIKit
 import Alamofire
 
 class APIClient {
     @discardableResult
     private static func performRequest<T:Decodable>(route:APIRouter, decoder: JSONDecoder = JSONDecoder(), completion:@escaping (Result<T, AFError>)->Void) -> DataRequest {
+        
         return AF.request(route)
                         .responseDecodable (decoder: decoder){ (response: DataResponse<T, AFError>) in
                             completion(response.result)
         }
     }
     
-    static func login(email: String, password: String, completion:@escaping (Result<User, AFError>)->Void) {
-        performRequest(route: APIRouter.login(email: email, password: password), completion: completion)
+
+    static func getRockets(completion:@escaping (Result<[Rocket], AFError>)->Void) {
+        let jsonDecoder = JSONDecoder()
+        performRequest(route: APIRouter.getAllRockets, decoder: jsonDecoder, completion: completion)
     }
     
-    static func getArticles(completion:@escaping (Result<[Article], AFError>)->Void) {
+    static func getRocketInfo(id: String, completion:@escaping (Result<Rocket, AFError>)->Void) {
         let jsonDecoder = JSONDecoder()
-        jsonDecoder.dateDecodingStrategy = .formatted(.articleDateFormatter)
-        performRequest(route: APIRouter.articles, decoder: jsonDecoder, completion: completion)
+        performRequest(route: APIRouter.getRocketInfo(id: id), decoder: jsonDecoder, completion: completion)
     }
 }
 

@@ -9,7 +9,7 @@ import Foundation
 
 struct K {
     struct ProductionServer {
-        static let baseURL = "https://api.spacexdata.com/v4/"
+        static let baseURL = "https://api.spacexdata.com/v4"
     }
     
     struct APIParameterKey {
