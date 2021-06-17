@@ -18,45 +18,47 @@ struct SXDetailsView: View {
         ZStack{
             LinearGradient(gradient: Gradient(colors: [Color(rocket.success_color),.black]), startPoint: .topLeading, endPoint: .bottomLeading)
                 .edgesIgnoringSafeArea(.all)
-
-            VStack{
-                    VStack{
-                        Text(rocket.name)
-                            .foregroundColor(.white)
-                            .fontWeight(.heavy)
-                            .font(.title)
-                            .frame(height: 100)
-                    }
-                    HStack{
-                        LaunchInfo(country: rocket.country, firstLaunch: rocket.first_flight, cost_per_launch: rocket.cost_per_launch.description, status: rocket.active)
-                    }.padding(EdgeInsets(top: 0, leading: 10, bottom: 20, trailing: 10))
-                    VStack{
-                        RemoteImage(url: rocket.imageURL)
-                            .aspectRatio(contentMode: .fill)
-                            .frame(height: 300)
-                            .cornerRadius(5)
-                    }
-                    VStack{
-                        HStack{
-                            Text(rocket.description)
-                                .foregroundColor(.white)
-                                .font(.custom("Helvetica Neue", size: 17))
-                            Spacer()
-                        }.padding(EdgeInsets(top: 0, leading: 10, bottom: 10, trailing: 10))
-                       
-                    }
-                    Spacer()
+            ScrollView(.vertical) {
                     VStack {
-                        HStack(spacing: 0) {
-                            Button("https://www.wikipedia.org") {
-                                if let wikiURL = URL(string: rocket.wikipedia){
-                                    openURL(wikiURL)
+                        VStack{
+                            Text(rocket.name)
+                                .foregroundColor(.white)
+                                .fontWeight(.heavy)
+                                .font(.title)
+                                .frame(height: 100)
+                        }
+                        HStack{
+                            LaunchInfo(country: rocket.country, firstLaunch: rocket.first_flight, cost_per_launch: rocket.cost_per_launch.description, status: rocket.active)
+                        }.padding(EdgeInsets(top: 0, leading: 10, bottom: 20, trailing: 10))
+                        VStack{
+                            RemoteImage(url: rocket.imageURL)
+                                .aspectRatio(contentMode: .fill)
+                                .frame(height: 300)
+                                .cornerRadius(5)
+                        }
+                        VStack{
+                            HStack{
+                                Text(rocket.description)
+                                    .foregroundColor(.white)
+                                    .font(.custom("Helvetica Neue", size: 17))
+                                Spacer()
+                            }.padding(EdgeInsets(top: 0, leading: 10, bottom: 10, trailing: 10))
+                           
+                        }
+                        Spacer()
+                        VStack {
+                            HStack(spacing: 0) {
+                                Button("https://www.wikipedia.org") {
+                                    if let wikiURL = URL(string: rocket.wikipedia){
+                                        openURL(wikiURL)
+                                    }
                                 }
                             }
+                            
                         }
-                        
                     }
-                }.frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .center)
+                    .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .center)
+               }            
         }
     }
    
